@@ -29,7 +29,7 @@ ordersController.getInvoiceId = async function (req, res) {
     const ordersData = await ordersModel.find({}).count();
     res.status(200).json({
       status: 200,
-      invoiceId: "000000" + (ordersData + 1),
+      invoiceId: "TR0000" + (ordersData + 1),
       description: {
         message: "Order has been fetched successfully!",
         errorMessage: "",
