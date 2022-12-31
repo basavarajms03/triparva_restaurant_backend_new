@@ -20,6 +20,10 @@ const orderSubDocument = new mongoose.Schema({
   price: {
     type: String,
   },
+  kot: {
+    quantity: 0,
+    taken: false,
+  },
 });
 
 const orderSchema = new mongoose.Schema(
