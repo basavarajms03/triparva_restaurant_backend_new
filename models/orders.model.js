@@ -21,8 +21,14 @@ const orderSubDocument = new mongoose.Schema({
     type: String,
   },
   kot: {
-    quantity: 0,
-    taken: false,
+    quantity: {
+      type: Number,
+      default: 0,
+    },
+    taken: {
+      type: Boolean,
+      default: false,
+    },
   },
 });
 
