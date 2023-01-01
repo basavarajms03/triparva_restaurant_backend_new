@@ -25,6 +25,10 @@ const orderSubDocument = new mongoose.Schema({
       type: Number,
       default: 0,
     },
+    oldquantity: {
+      type: Number,
+      default: 0,
+    },
     taken: {
       type: Boolean,
       default: false,
