@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const non_auth_routers = require("./routes/no-auth.routes");
 const itemsRoutes = require("./routes/items.routes");
 const orderRoutes = require("./routes/orders.routes");
-const socketIO = require("socket.io");
 const http = require("http");
 require("dotenv").config();
 require("./config/dbcon");
@@ -19,6 +18,8 @@ app.use(bodyParser.json());
 app.use("/v1/api/non-auth", non_auth_routers);
 app.use("/v1/api/items", itemsRoutes);
 app.use("/v1/api/orders", orderRoutes);
+
+const socketIO = require("socket.io");
 
 const server = http.createServer(app);
 
