@@ -29,7 +29,7 @@ const server = http.createServer(app);
 // IO socket connect
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "http://localhost:3000/*",
     methods: ["GET", "POST"],
     transports: ["websocket", "polling"],
   },
