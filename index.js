@@ -7,7 +7,7 @@ const itemsRoutes = require("./routes/items.routes");
 const orderRoutes = require("./routes/orders.routes");
 
 // Socket server
-const { socketIO } = require("socket.io");
+const { Server } = require("socket.io");
 const http = require("http");
 
 require("dotenv").config();
@@ -27,7 +27,7 @@ app.use("/v1/api/orders", orderRoutes);
 const server = http.createServer(app);
 
 // IO socket connect
-const io = new socketIO(server, { cors: { origin: "*" } });
+const io = new Server(server, { cors: { origin: "*" } });
 
 io.on("connection", (socket) => {
   console.log("User connected", socket.id);
