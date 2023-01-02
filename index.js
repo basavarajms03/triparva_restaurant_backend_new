@@ -23,7 +23,7 @@ const socketIO = require("socket.io");
 
 const server = http.createServer(app);
 
-const io = socketIO(server);
+const io = socketIO(server, { cors: { origin: "*" } });
 
 let interval;
 
