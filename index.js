@@ -7,7 +7,7 @@ const itemsRoutes = require("./routes/items.routes");
 const orderRoutes = require("./routes/orders.routes");
 
 // Socket server
-const socketIO = require("socket.io");
+const { socketIO } = require("socket.io");
 const http = require("http");
 
 require("dotenv").config();
