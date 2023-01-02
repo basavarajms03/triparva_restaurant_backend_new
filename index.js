@@ -27,7 +27,9 @@ app.use("/v1/api/orders", orderRoutes);
 const server = http.createServer(app);
 
 // IO socket connect
-const io = new Server(server, { cors: { origin: "*" } });
+const io = new Server(server, {
+  cors: { origin: "*", methods: ["GET", "POST"] },
+});
 
 io.on("connection", (socket) => {
   console.log("User connected", socket.id);
