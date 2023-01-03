@@ -7,7 +7,7 @@ const itemsRoutes = require("./routes/items.routes");
 const orderRoutes = require("./routes/orders.routes");
 
 // Socket server
-const socket = require("socket.io");
+const { Server } = require("socket.io");
 const http = require("http");
 
 require("dotenv").config();
@@ -27,9 +27,9 @@ app.use("/v1/api/orders", orderRoutes);
 const server = http.createServer(app);
 
 // IO socket connect
-const io = new socket(server, {
+const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "http://localhost:3000/*",
     methods: ["GET", "POST"],
     transports: ["websocket", "polling"],
   },
